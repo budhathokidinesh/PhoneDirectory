@@ -13,7 +13,8 @@ const ContactSchema: Schema = new Schema({
   phone: {
     type: Number,
     required: true,
-    length: 10,
+    min: 1000000000,
+    max: 9999999999,
   },
 });
 export default mongoose.model<Icontact>("Contact", ContactSchema);

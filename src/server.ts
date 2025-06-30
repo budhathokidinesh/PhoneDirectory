@@ -1,12 +1,14 @@
 import express from "express";
 import connectDB from "./config/database";
+import phoneDirectoryRoutes from "./routes/phoneDirectory";
 const app = express();
 const port = 8000;
+
 //connnect MongoDb
 connectDB();
 
 app.use(express.json());
-// app.use("/api/phone-directory", phoneDirectoryRoutes);
+app.use("/api/phone-directory", phoneDirectoryRoutes);
 
 app.get("/", (req, res) => {
   res.send("welcome to the phone directory");
